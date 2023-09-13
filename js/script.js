@@ -7,7 +7,8 @@ let minutes = parseInt(temps / 60, 10);
 let secondes = parseInt(temps % 60, 10);
 const bouton = document.getElementById("start");
 bouton.addEventListener("click", () =>{
-    
+    affichageTimer(24,59);
+    temps--;
     DemarrerTimer();
 });
 
