@@ -1,17 +1,29 @@
-const activitee = document.getElementById("activitee");
-const timerElement = document.getElementById("timer");
-const pause = 5;
-const depart = 25;
-let temps = depart*60;
-let minutes = parseInt(temps / 60, 10);
-let secondes = parseInt(temps % 60, 10);
-const bouton = document.getElementById("start");
-bouton.addEventListener("click", () =>{
-    affichageTimer(24,59);
+//variables
+
+let activitee = document.getElementById("activitee");
+let travail = true;
+let timer = document.getElementById("timer");
+
+let tempsDePause = 1;
+let tempsDeTravail = 1;
+
+let temps = tempsDeTravail*60;
+let minutes = parseInt(tempsDeTravail/60,10);
+let secondes = parseInt(tempsDeTravail % 60,10);
+
+let boutonPlay = document.getElementById("start");
+let boutonReset = document.getElementById("reset");
+
+//ecouteur du boutton
+
+boutonPlay.addEventListener("click", () =>{
     temps--;
+    affichageTimer(minutes,59);  
+    
     DemarrerTimer();
 });
 
+// fonctions du timer
 
 function DemarrerTimer(){
     temps--;
@@ -26,21 +38,42 @@ function affichageTimer(minutes, secondes){
         secondes = "0"+secondes;
     }
 
-    timerElement.innerText= `${minutes} : ${secondes}`;
+    timer.innerText= `${minutes} : ${secondes}`;
 
 }
 
 function diminuerTemps(){
 
-    minutes = parseInt(temps / 60,10) ;
-    secondes = parseInt(temps % 60,10);
-
-    affichageTimer(minutes,secondes);
-
-    temps--;
     if(temps <= 0){
-        temps = pause*60;
-        activitee.innerText = "Pause";
+        ChangementActivite();
+    }else{                                      //on voit pas la dernière seconde bien encadrer dans des conditions
+        minutes = parseInt(temps / 60,10) ;
+        secondes = temps % 60;
+    
+        temps--;
+        affichageTimer(minutes,secondes);
     }
 
+    
+
+}
+
+//change du temps de pause au temps de travail et inversement
+function ChangementActivite(){
+    if(travail){
+        temps = tempsDePause * 60;
+        activitee.innerText = "Pause";
+        travail=false;
+    }else{
+        temps = tempsDeTravail * 60;
+        activitee.innerText = "Travail";
+        travail=true;
+    }
+    minutes = parseInt(temps / 60,10) ;
+    secondes = parseInt(temps % 60,10);
+    affichageTimer(minutes,0);
+}
+
+function reset(){
+    location.reload;
 }
