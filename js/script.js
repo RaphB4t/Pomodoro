@@ -18,7 +18,7 @@ let boutonReset = document.getElementById("reset");
 
 boutonPlay.addEventListener("click", () =>{
     temps--;
-    affichageTimer(minutes,59);  
+    affichageTimer(minutes,59); 
     
     DemarrerTimer();
 });
@@ -44,12 +44,13 @@ function affichageTimer(minutes, secondes){
 
 function diminuerTemps(){
 
+    minutes = parseInt(temps / 60,10) ;
+    secondes = temps % 60;
+
     if(temps <= 0){
+        affichageTimer(minutes,0); 
         ChangementActivite();
-    }else{                                      //on voit pas la dernière seconde bien encadrer dans des conditions
-        minutes = parseInt(temps / 60,10) ;
-        secondes = temps % 60;
-    
+    }else{                                      //on voit pas la dernière seconde bien encadrer dans des conditions    
         temps--;
         affichageTimer(minutes,secondes);
     }
