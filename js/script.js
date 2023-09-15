@@ -4,32 +4,42 @@ let activitee = document.getElementById("activitee");
 let travail = true;
 let timer = document.getElementById("timer");
 
-let tempsDePause = 1;
-let tempsDeTravail = 1;
+let tempsDePause = 5;
+let tempsDeTravail = 25;
 
 let temps = tempsDeTravail*60;
-let minutes = parseInt(tempsDeTravail/60,10);
-let secondes = parseInt(tempsDeTravail % 60,10);
+let minutes = parseInt(temps/60,10);
+let secondes = parseInt(temps % 60,10);
 
 let boutonPlay = document.getElementById("start");
-let boutonReset = document.getElementById("reset");
+let timer_lance = false;
 
 //ecouteur du boutton
 
 boutonPlay.addEventListener("click", () =>{
-    temps--;
-    affichageTimer(minutes,59); 
+    if(!timer_lance){
+        temps--;
+        minutes = parseInt(temps / 60,10) ;
+        secondes = parseInt(temps % 60,10);
+        affichageTimer(minutes,secondes); 
+        boutonPlay.innerHTML = "Redémarrer";
+        timer_lance = true;
+        DemarrerTimer();
+    }else{
+        redemarrer();
+    }
     
-    DemarrerTimer();
 });
 
 // fonctions du timer
 
 function DemarrerTimer(){
+    timer_lance = true;
     temps--;
     setInterval(diminuerTemps, 1000);
 }
 
+// prend en paramètres 2 entiers pour renvoyer l'affichage du temps
 function affichageTimer(minutes, secondes){
     if (minutes<10){
         minutes = "0"+minutes;
@@ -42,15 +52,16 @@ function affichageTimer(minutes, secondes){
 
 }
 
+// réduit le temps du chrono et vérifie si il n'arrive pas à 0
 function diminuerTemps(){
 
     minutes = parseInt(temps / 60,10) ;
     secondes = temps % 60;
 
     if(temps <= 0){
-        affichageTimer(minutes,0); 
         ChangementActivite();
-    }else{                                      //on voit pas la dernière seconde bien encadrer dans des conditions    
+        temps--;
+    }else{                            
         temps--;
         affichageTimer(minutes,secondes);
     }
@@ -72,9 +83,10 @@ function ChangementActivite(){
     }
     minutes = parseInt(temps / 60,10) ;
     secondes = parseInt(temps % 60,10);
-    affichageTimer(minutes,0);
+    affichageTimer(minutes,secondes);
 }
 
-function reset(){
-    location.reload;
+//recharge la page pour réinitialiser le timer
+function redemarrer(){
+    location.reload();
 }
