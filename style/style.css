@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+    padding-top: 10%;
+}
+
+#activitee{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#timer{
+    margin: 5%;
+    font-size: 50px;
+}
