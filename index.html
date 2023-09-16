@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
     <title>test_Timer</title>
+
+    <!-- Kit Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!--Kit de Font Awesome-->
+    <script src="https://kit.fontawesome.com/9a8552360f.js" crossorigin="anonymous"></script>
+
+    <!--Lien CSS-->
+    <link rel="stylesheet" href="./style/style.css">
+
 </head>
+
 <body>
-    <p id="activitee">Travail</p>
-    <div id="timer">25 : 00</div>
-    <button id="start">Démarrer</button>
+    <div class="container">
+        <header>
+            <h1>Timer Pomodoro</h1>
+        </header>
+
+        <p id="activitee">Travail</p>
+
+        <section class="chrono">
+            <div class="cercle">
+                <div id="timer">25 : 00</div>
+            </div>
+        </section>
+
+        <section class="FonctionsTimer">
+            <button id="BoutonDemarer" >
+                <p id="TexteBouton">
+                    Démarrer
+                    <i class="fa-solid fa-play" style="color: #35ca2b;"></i>
+                </p>
+            </button>
+        </section>
+
+    </div>
+
     <script src="./js/script.js"></script>
 </body>
+
 </html>

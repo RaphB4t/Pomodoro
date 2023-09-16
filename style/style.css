@@ -1,14 +1,30 @@
-body{
+body {
     text-align: center;
     padding-top: 10%;
 }
 
-#activitee{
+#activitee {
     font-weight: bold;
     font-size: 30px;
 }
 
-#timer{
+.FonctionsTimer #BoutonDemarer {
+    border: 4px solid green ;
+    background-color: green;
+    border-radius: 8%;
+    
+}
+
+.FonctionsTimer #BoutonDemarer:hover {
+    border: 3.5px;
+}
+
+#BoutonDemarer {
+    color: white;
+    font-size: 20px;
+}
+
+#timer {
     margin: 5%;
     font-size: 50px;
 }
