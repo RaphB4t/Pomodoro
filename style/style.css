@@ -1,6 +1,5 @@
 body {
     text-align: center;
-    padding-top: 10%;
 }
 
 #activitee {
@@ -8,11 +7,28 @@ body {
     font-size: 30px;
 }
 
+.chrono{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.cercle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: blue;
+    border: 15px solid red;
+    width: 350px;
+    height: 350px;
+  }
+
 .FonctionsTimer #BoutonDemarer {
     border: 4px solid green ;
     background-color: green;
     border-radius: 8%;
-    
 }
 
 .FonctionsTimer #BoutonDemarer:hover {
