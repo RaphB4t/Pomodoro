@@ -7,35 +7,42 @@ let timer = document.getElementById("timer");
 let tempsDePause = 5;
 let tempsDeTravail = 25;
 
-let temps = tempsDeTravail * 60;
+let temps = 25 * 0;
 let minutes = parseInt(temps / 60, 10);
 let secondes = parseInt(temps % 60, 10);
 
 let boutonPlay = document.getElementById("BoutonDemarer");
-let timer_lance = false;
+let timer_lancee = false;
 
-//ecouteur du boutton
+//fonction lancee au  chargement de la page
+function PageChargee() {
+    ChangerLeTemp();
 
-boutonPlay.addEventListener("click", () => {
-    if (!timer_lance) {
-        temps--;
-        minutes = parseInt(temps / 60, 10);
-        secondes = parseInt(temps % 60, 10);
-        affichageTimer(minutes, secondes);
-        boutonPlay.innerHTML = "Redémarrer";
-        //ajouter <i class="fa-solid fa-rotate-right" style="color: #e60a0a;"></i>
-        timer_lance = true;
-        DemarrerTimer();
-    } else {
-        redemarrer();
-    }
+    //ecouteur du boutton
+    boutonPlay.addEventListener("click", () => {
+        temps = tempsDeTravail * 60;
+        if (!timer_lancee) {
+            temps--;
+            minutes = parseInt(temps / 60, 10);
+            secondes = parseInt(temps % 60, 10);
+            affichageTimer(minutes, secondes);
+            boutonPlay.innerHTML = "Redémarrer";
+            //ajouter <i class="fa-solid fa-rotate-right" style="color: #e60a0a;"></i>
+            timer_lancee = true;
+            DemarrerTimer();
+        } else {
+            redemarrer();
+        }
 
-});
+    });
+
+}
+
+
 
 // fonctions du timer
 
 function DemarrerTimer() {
-    timer_lance = true;
     temps--;
     setInterval(diminuerTemps, 1000);
 }
@@ -91,3 +98,16 @@ function ChangementActivite() {
 function redemarrer() {
     location.reload();
 }
+
+// sert à changer le temps de travail selon la valeur de l'utilisateur
+function ChangerLeTemp() {
+    document.getElementById("tempTravail").addEventListener("change", function () {
+        tempsDeTravail = this.value;
+        affichageTimer(tempsDeTravail, 0);
+    })
+    document.getElementById("tempPause").addEventListener("change", function () {
+        tempsDePause = this.value;
+    })
+}
+
+PageChargee();
