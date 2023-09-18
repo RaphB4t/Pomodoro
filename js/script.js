@@ -17,6 +17,15 @@ let timer_lancee = false;
 //fonction lancee au  chargement de la page
 function PageChargee() {
     ChangerLeTemp();
+    if(localStorage.getItem('TT') != null){
+        tempsDeTravail = localStorage.getItem('TT');
+        document.getElementById("tempTravail").value = tempsDeTravail;
+        affichageTimer(tempsDeTravail,0);
+    }
+    if(localStorage.getItem('TP') != null){
+        tempsDePause = localStorage.getItem('TP');
+        document.getElementById("tempPause").value = tempsDePause;
+    }
 
     //ecouteur du boutton
     boutonPlay.addEventListener("click", () => {
@@ -113,6 +122,7 @@ function ChangerLeTemp() {
             tempsDeTravail = Math.round(this.value);
             this.value = tempsDeTravail;
         }
+        localStorage.setItem('TT',tempsDeTravail);
         affichageTimer(tempsDeTravail, 0);
     })
     document.getElementById("tempPause").addEventListener("change", function () {
@@ -126,6 +136,7 @@ function ChangerLeTemp() {
             tempsDePause = Math.round(this.value);
             this.value = tempsDePause;
         }
+        localStorage.setItem('TP',tempsDePause);
     })
 }
 
