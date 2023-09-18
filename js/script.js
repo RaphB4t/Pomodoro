@@ -35,7 +35,7 @@ function PageChargee() {
             minutes = parseInt(temps / 60, 10);
             secondes = parseInt(temps % 60, 10);
             affichageTimer(minutes, secondes);
-            boutonPlay.innerHTML = `Redémarrer <i class="fa-solid fa-rotate-right" style="color: #35ca2b;"></i>`;
+            boutonPlay.innerHTML = `Redémarrer <em class="fa-solid fa-rotate-right" style="color: #35ca2b;"></em>`;
             timer_lancee = true;
             DemarrerTimer();
         } else {
@@ -120,10 +120,10 @@ function ChangerLeTemp() {
         //gestion d'erreurs
         if (this.value > 60) {
             tempsDeTravail = 60;
-            this.value = 60
+            this.value = 60;
         } else if (this.value < 1) {
-            tempsDeTravail = 1
-            this.value = 1
+            tempsDeTravail = 1;
+            this.value = 1;
         } else {
             tempsDeTravail = Math.round(this.value);
             this.value = tempsDeTravail;
@@ -139,10 +139,10 @@ function ChangerLeTemp() {
         //gestion d'erreurs
         if (this.value > 60) {
             tempsDePause = 60;
-            this.value = 60
+            this.value = 60;
         } else if (this.value < 1) {
-            tempsDePause = 1
-            this.value = 1
+            tempsDePause = 1;
+            this.value = 1;
         } else {
             tempsDePause = Math.round(this.value);
             this.value = tempsDePause;

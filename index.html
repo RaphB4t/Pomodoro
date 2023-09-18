@@ -34,21 +34,29 @@
         <div class="FonctionsTimer">
             <button id="BoutonDemarer">
                 Démarrer
-                <i class="fa-solid fa-play" style="color: #35ca2b;"></i>
+                <em class="fa-solid fa-play" style="color: #35ca2b;"></em>
             </button>
         </div>
 
         <div class="Options_chronometre">
             <div class="TempTravailModifieur">
-                Temps de Travail :
-                <input type="number" id="tempTravail" value="25" min="1" max="60">
-                min
+                <form action="javascript:void(0);">
+                    <p>
+                        <label for="tempTravail">Temps de Travail : </label>
+                        <input type="number" id="tempTravail" value="25" min="1" max="60">
+                        min
+                    </p>
+                </form>
             </div>
 
             <div class="PauseModifieur">
-                Temps de Pause :
-                <input type="number" id="tempPause" value="5" min="1" max="60">
-                min
+                <form action="javascript:void(0);">
+                    <p>
+                        <label for="tempPause">Temps de Pause : </label>
+                        <input type="number" id="tempPause" value="5" min="1" max="60">
+                        min
+                    </p>
+                </form>
             </div>
         </div>
     </div>
