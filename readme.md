@@ -1,6 +1,6 @@
 # Timer Pomodoro :hourglass: :tomato:
 
-Ceci est un timer Pomodoro c'est une méthode de travail qui consiste à osciller entre un temps de travail et un temps de pause.
+Ceci est un timer Pomodoro c'est une méthode de travail qui consiste à basculer entre un temps de travail et un temps de pause.
 
 ## Faite vous votre propre avis !
 
@@ -20,6 +20,7 @@ Vous pouvez tester mon [pomodoro](https://raphb4t.github.io/Pomodoro/)
 - Vous pouvez lancer le pomodoro sans changer le temps de pause et de travail, Vous osccilerais donc entre 25 minutes de travail et 5 minutes de pause
 - Vous pouvez choisir les temps de travail et de pause dans les cases respective en bas de la page
 - Le changement entre pause et travail se fait automatiquement vous n'avez qu'à regarder
+- Lorsque vous quittez la page ou vous la rechargez par accident les temps de travail et de pause sont sauvegardés
 
 ## Pré-requis :clipboard:
 
