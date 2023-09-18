@@ -26,8 +26,7 @@ function PageChargee() {
             minutes = parseInt(temps / 60, 10);
             secondes = parseInt(temps % 60, 10);
             affichageTimer(minutes, secondes);
-            boutonPlay.innerHTML = "Redémarrer";
-            //ajouter <i class="fa-solid fa-rotate-right" style="color: #e60a0a;"></i>
+            boutonPlay.innerHTML = `Redémarrer <i class="fa-solid fa-rotate-right" style="color: #e60a0a;"></i>`;
             timer_lancee = true;
             DemarrerTimer();
         } else {
@@ -102,11 +101,29 @@ function redemarrer() {
 // sert à changer le temps de travail selon la valeur de l'utilisateur
 function ChangerLeTemp() {
     document.getElementById("tempTravail").addEventListener("change", function () {
-        tempsDeTravail = this.value;
+        if(this.value >60){
+            tempsDeTravail = 60;
+            this.value = 60
+        }else if(this.value<1){
+            tempsDeTravail = 1
+            this.value = 1
+        }else{
+            tempsDeTravail = Math.round(this.value);
+            this.value = tempsDeTravail;
+        }
         affichageTimer(tempsDeTravail, 0);
     })
     document.getElementById("tempPause").addEventListener("change", function () {
-        tempsDePause = this.value;
+        if(this.value >60){
+            tempsDePause = 60;
+            this.value = 60
+        }else if(this.value<1){
+            tempsDePause = 1
+            this.value = 1
+        }else{
+            tempsDePause = Math.round(this.value);
+            this.value = tempsDePause;
+        }
     })
 }
 

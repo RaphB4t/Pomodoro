@@ -1,10 +1,21 @@
 body {
     text-align: center;
+    background-color: red;
 }
 
 #activitee {
     font-weight: bold;
     font-size: 30px;
+}
+
+h1{
+    color: white;
+    font-family:'Sofia', sans-serif;
+    font-size: 35px;
+}
+
+p{
+    color: white;
 }
 
 .chrono{
@@ -19,8 +30,9 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: blue;
-    border: 15px solid red;
+    background-color: red;
+    border: 15px solid darkgoldenrod;
+    box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
     width: 350px;
     height: 350px;
   }
@@ -44,4 +56,18 @@ body {
     margin: 5%;
     font-size: 50px;
     color: white;
+}
+
+.Options_chronometre{
+    padding-top: 1%;
+    font-size: 25px;
+    color: white;
+}
+
+.TempTravailModifieur{
+    padding-top: 1%;
+}
+
+.PauseModifieur{
+    padding-top: 1%;
 }
