@@ -1,6 +1,6 @@
 # Timer Pomodoro :hourglass: :tomato:
 
-Ceci est un timer Pomodoro c'est une méthode de travail qui consiste à osciller entre un temps de travail et un temps de pause.
+Ceci est un timer Pomodoro c'est une méthode de travail qui consiste à basculer entre un temps de travail et un temps de pause.
 
 ## Faite vous votre propre avis !
 
