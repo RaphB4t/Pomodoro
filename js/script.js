@@ -18,12 +18,12 @@ let timer_lancee = false;
 function PageChargee() {
     ChangerLeTemp();
     if(localStorage.getItem('TT') != null){
-        tempsDeTravail = localStorage.getItem('TT');
+        tempsDeTravail = parseInt(localStorage.getItem('TT'));
         document.getElementById("tempTravail").value = tempsDeTravail;
         affichageTimer(tempsDeTravail,0);
     }
     if(localStorage.getItem('TP') != null){
-        tempsDePause = localStorage.getItem('TP');
+        tempsDePause = parseInt(localStorage.getItem('TP'));
         document.getElementById("tempPause").value = tempsDePause;
     }
 
