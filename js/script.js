@@ -42,6 +42,8 @@ function PageChargee() {
 // fonctions du timer
 
 function DemarrerTimer() {
+    document.getElementById('tempTravail').disabled = true;
+    document.getElementById('tempPause').disabled = true;
     temps--;
     setInterval(diminuerTemps, 1000);
 }
