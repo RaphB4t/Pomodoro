@@ -76,3 +76,10 @@ h1 {
 .PauseModifieur {
     padding-top: 1%;
 }
+
+footer{
+   position:absolute;
+   bottom:0;
+   width:100%;
+   font-size: 14px;
+}
