@@ -4,7 +4,7 @@ Ceci est un timer Pomodoro c'est une méthode de travail qui consiste à oscille
 
 ## Faite vous votre propre avis !
 
-Vous pouvez tester mon [pomodoro] (https://raphb4t.github.io/Pomodoro/)
+Vous pouvez tester mon [pomodoro](https://raphb4t.github.io/Pomodoro/)
 
 ## Comment l'utiliser :question:
 
